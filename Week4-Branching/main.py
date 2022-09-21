@@ -105,4 +105,117 @@ else:
 
 print(classes)
 
+secret_word = 'ghost'
+secret_word_uppercase = "GHOST"
 
+if 'ost' in secret_word:
+    print("contains ost")
+
+if '' in secret_word:
+    print("You have an empty string?")
+
+# if you are getting user input and need to check against other strings, use .lower()
+first_letter = input('Please enter a letter to guess').lower()
+
+
+if first_letter.lower() in secret_word or first_letter.upper() in secret_word_uppercase:
+    print("You checked the hard way for case")
+
+if len(first_letter) > 1:
+    print("You can't read directions can you?")
+else:
+    if first_letter in secret_word:
+        print(first_letter, "is in the secret word!")
+    else:
+        print(first_letter, "is not in the secret word!")
+
+if len(first_letter) != 1:
+    print("You can't read directions can you?")
+
+elif first_letter in secret_word:
+    print(first_letter, "is in the secret word!")
+else:
+    print(first_letter, "is not in the secret word!")
+
+
+kids = ["Joy", 'Jeb', 'Jenavieve', 'Journey', 'Jubilee', "Jackson", 'Jasper']
+
+name = input("Enter a J name")
+
+if name in kids:
+    print("You have the same name as one of Eric's kids!")
+else:
+    print("That's a unique J name!")
+
+test_value = 10
+
+other_value = 2
+
+print(id(test_value))
+print(id(other_value))
+
+other_value += 8
+
+print(id(test_value))
+print(id(other_value))
+
+first = [1, 2, 3]
+last = [7, 8, 9]
+
+print(id(first))
+print(id(last))
+
+last = [1, 2, 3]
+
+print(id(first))
+print(id(last))
+
+last = first
+
+print(id(first))
+print(id(last))
+
+print("first contents", first)
+print('lst contents', last)
+
+first.append(42)
+
+print("first contents", first)
+print('lst contents', last)
+
+player = 'rock'
+computer = 'spock'
+
+# order of operations is important for logical operators
+player == "rock" and (computer == 'paper' or computer == 'spock')
+
+
+
+if 'CIS' < 'Eric':
+    print("Eric is greater than CIS")
+
+print("Eric's minimum kid", min(kids))
+
+number = 0
+
+if number: # non 0 numbers are true
+    print("You have the answer")
+
+word = 'Test'
+
+if word: # non empty string is true
+    print("It's not false")
+
+word = '' # empty string is false
+if word:
+    print("It's not false")
+
+classes = {}
+classes['CIS 1501'] = {}
+classes['CIS 1501']['Meeting Time'] = "Monday/Wednesday 12:30pm-1:45pm"
+classes['CIS 1501']['Description'] = "CS 1 for Data Scientists"
+
+classes_with_list = {}
+classes['CIS 1501'] = []
+classes['CIS 1501'].append("Monday/Wednesday 12:30pm-1:45pm")
+classes['CIS 1501'].append("CS 1 for Data Scientists")
