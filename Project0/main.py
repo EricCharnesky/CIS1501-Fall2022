@@ -55,4 +55,3 @@ print(store)
 
 for item in store:
     print(f'{item} has {store[item]["quantity"]} remaining')
-    

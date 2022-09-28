@@ -127,3 +127,47 @@ print("or the easy way")
 for row in range(height):
     print("*" * length)
 
+# start is optional, the end is required, the count by is optional
+for skip_count in range(1, 11, 2):
+    print(skip_count)
+
+# if you want to use count by, you have to include start, end, count by
+for backwards_count in range(10, 0, -1):
+    print(backwards_count)
+
+    # this doesn't work, it thinks the start is 10, and the end is 2
+for value in range(10, 2):
+    print(value)
+else:
+    print("that's all folks")
+
+while True:
+    number = int(input("Enter a number"))
+    if number == 42:
+        break # means end the loop, hard stop
+else: # only runs if the loop ends normally - doesn't break
+    print("This loop else is running")
+
+number = 1
+count_of_odd_numbers = 0
+# python is truth-y - every value is true or false
+# 0 is false, anything other than 0 is true
+while number % 2: # odd
+    number = int(input("Enter an odd value"))
+    if number % 2 == 0:
+        continue # causes the loop body to stop, and jump up to the loop expression
+    count_of_odd_numbers += 1
+print(f'You entered {count_of_odd_numbers} odd numbers')
+
+
+names = ['Eric', 'Jasmine', 'Joy', 'Jeb', 'Vivi' ]
+
+for index in range(len(names)):
+    print(f'index: {index} value: {names[index]}')
+
+    # value is a copy from the list
+for index, value in enumerate(names):
+    value = value.upper()
+    print(f'index: {index} value: {value}')
+
+print(names)
