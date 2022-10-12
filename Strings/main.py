@@ -88,3 +88,53 @@ print(name[3:4])
     # start index - end index not included
 print(name[0:2])
 print(name[2:len(name)])
+
+names = input("Enter a bunch of names, comma separated")
+
+names_list = names.split(',')
+
+print(names_list)
+
+for index in range(len(names_list)):
+    names_list[index] = names_list[index].strip()
+
+print(names_list)
+
+
+names = input("Enter names with space separations")
+
+names_list = names.split()
+
+print(names_list)
+
+names_string = ", ".join(names_list)
+
+print(names_string)
+
+
+character_to_split_on = input("Enter the character to split on")
+sentence = input("Enter a sentence to split")
+
+# splitting the hard way
+chunks = []
+
+index_of_character_to_split = sentence.find(character_to_split_on)
+last_split_index = 0
+
+while index_of_character_to_split >= 0:
+    chunks.append(sentence[last_split_index:index_of_character_to_split])
+    last_split_index = index_of_character_to_split + len(character_to_split_on)
+    index_of_character_to_split = sentence.find(character_to_split_on, last_split_index)
+chunks.append(sentence[last_split_index:])
+
+print(chunks)
+
+character_to_join_with = " "
+
+string_result = ""
+for item in chunks:
+    string_result += item + character_to_join_with
+
+string_result = string_result[:(len(character_to_join_with)*-1)]
+
+print(string_result)
