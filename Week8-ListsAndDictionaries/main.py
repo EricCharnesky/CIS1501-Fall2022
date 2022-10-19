@@ -1,3 +1,44 @@
+classes = {'CIS 1501': "CS1 for Data Scientists", "IMSE 317": "Probability and Statistics"}
+more_classes = {'CIS 2001': 'CS2 for Data Scientists', 'STAT 325': "Intro to Data Science"}
+
+for key in more_classes:
+    classes[key] = more_classes[key]
+
+# same as classes.update(more_classes)
+
+class_to_take = input("Enter the course code you want to take")
+
+if class_to_take in classes:
+    print(classes[class_to_take])
+else:
+    print("That class isn't in our catalog")
+
+print(classes.get(class_to_take, "That class isn't in our catalog"))
+print(classes.get(class_to_take))
+
+new_dictionary = {}
+for key in classes:
+    new_dictionary[key] = classes[key]
+
+for key in more_classes:
+    new_dictionary[key] = more_classes[key]
+
+for key, value in new_dictionary.items():
+    print(key, value)
+
+# can check values if you get the values out
+if 'Intro to Data Science' in new_dictionary.values():
+    print("that class is offered")
+
+    # use .keys() to get the out and sort them
+for key in sorted(new_dictionary.keys()):
+    print(key, new_dictionary[key])
+
+
+program_plan = {'Fall Year 1': new_dictionary, 'Winter Year 1': {'ENG 100': "Composition"}}
+
+print(program_plan['Fall Year 1']['CIS 1501'])
+
 lotto_numbers = [5, 4, 3, 2, 1]
 
 # what index do you want to insert at, value
