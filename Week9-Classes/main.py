@@ -6,6 +6,57 @@
 
 # private attributes with public functions
 
+
+class BankAccount:
+
+    def __init__(self, owner, account_number):
+        self._owner = owner
+        self._account_number = account_number
+        self._balance = 0
+
+    def __eq__(self, other):
+        return self._balance == other.get_balance() and \
+            self._owner == other.get_owner() and \
+            self._account_number == other.get_account_number()
+
+    def __ne__(self, other):
+        return not self == other
+
+    def __lt__(self, other):
+        return self._balance < other.get_balance()
+
+    def __le__(self, other):
+        return self._balance <= other.get_balance()
+
+    def __gt__(self, other):
+        return self._balance > other.get_balance()
+
+    def __ge__(self, other):
+        return self._balance >= other.get_balance()
+
+    def __str__(self):
+        return f"Bank account owner: {self._owner} " \
+               f"- Number: {self._account_number} " \
+                f"- Balance: {self._balance}"
+
+    def get_account_number(self):
+        return self._account_number
+
+    def get_owner(self):
+        return self._owner
+
+    def get_balance(self):
+        return self._balance
+
+    def deposit(self, amount):
+        if amount > 0:
+            self._balance += amount
+
+    def withdraw(self, amount):
+        if 0 < amount <= self._balance:
+            self._balance -= amount
+
+
 class Tree:
 
     # constructor - initializer
@@ -91,7 +142,24 @@ def print_tree_details(tree):
     print("Tree color: " + tree.color)
     print("Tree height: " + str(tree.get_height_in_meters()) + " meters")
 
+
+checking = BankAccount("Eric", 123)
+checking.deposit(10)
+# print(str(checking))
+print(checking)
+
+savings = BankAccount("Eric", 234)
+print(f"checking == savings : { checking == savings }")
+
+
+
+
+
 # object is an instance of a class
+
+
+
+
 
 maple_tree = Tree() # calls the tree __init__ method
 maple_tree.type = "Maple"
