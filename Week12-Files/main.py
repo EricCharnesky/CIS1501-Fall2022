@@ -40,7 +40,7 @@ if os.path.exists(filename):
         file_to_write.write("here's line 1 from python\n")
         file_to_write.write("here's line 2 from python\n")
 
-with open('tempdata.csv', 'r') as csvfile:
+with open('tempdata.csv', 'r', encoding='utf-8-sig') as csvfile:
     temp_reader = csv.reader(csvfile, delimiter=',')
 
     row_num = 1
